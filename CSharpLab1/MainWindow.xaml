@@ -8,6 +8,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid IsEnabled="{Binding IsControlEnabled}">
-        <view:BirthDateControl></view:BirthDateControl>
+        <view:BirthDateView></view:BirthDateView>
     </Grid>
 </Window>

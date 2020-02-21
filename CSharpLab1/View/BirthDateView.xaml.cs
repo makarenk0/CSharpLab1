@@ -14,11 +14,11 @@ using System.Windows.Shapes;
 namespace CSharpLab1.View
 {
     /// <summary>
-    /// Логика взаимодействия для BirthDateControl.xaml
+    /// Логика взаимодействия для BirthDateView.xaml
     /// </summary>
-    public partial class BirthDateControl : UserControl
+    public partial class BirthDateView : UserControl
     {
-        public BirthDateControl()
+        public BirthDateView()
         {
             InitializeComponent();
         }
