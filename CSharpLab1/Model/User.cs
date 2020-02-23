@@ -9,9 +9,11 @@ namespace CSharpLab1.Model
         private int _age;
         private DateTime _birthDate;
         private string _userWesternZodiac;
-        // private WesternZodiac _userWesternZodiac;
+        private string _userChineseZodiac;
 
         private string[] WesternZodiac = { "Capricorn", "Aquarius", "Pisces", "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio", "Sagittarius" };
+        private string[] ChineseZodiac = { "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake", "Horse", "Goat", "Monkey", "Rooster", "Dog", "Pig" };
+
 
         public User()
         {
@@ -46,6 +48,14 @@ namespace CSharpLab1.Model
             }
         }
 
+        public string UserChineseZodiac
+        {
+            get
+            {
+                return _userChineseZodiac;
+            }
+        }
+
 
         public bool processData()
         {
@@ -55,14 +65,19 @@ namespace CSharpLab1.Model
                 return false;
             }
 
-            uint zodiac = (uint)(_birthDate.DayOfYear / 30);
-            if (zodiac == 0 && (_birthDate.DayOfYear < 21 || _birthDate.DayOfYear > 23))
+            #region WesternZodiac
+            uint wzodiac = (uint)(_birthDate.DayOfYear / 30);
+            if (wzodiac == 0 && (_birthDate.DayOfYear < 21 || _birthDate.DayOfYear > 23))
             {
-                zodiac = 11;  // Sagittarius
+                wzodiac = 11;  // Sagittarius
             }
-            _userWesternZodiac = WesternZodiac[zodiac];
+            _userWesternZodiac = WesternZodiac[wzodiac];
+            #endregion
 
-
+            #region ChineseZodiac
+            uint chzodiac = (uint)((_birthDate.Year-1900) % 12);
+            _userChineseZodiac = ChineseZodiac[chzodiac];
+            #endregion
 
             return true;
         }

@@ -10,7 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
@@ -21,7 +21,16 @@
         <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Enter your birth date: "/>
         <DatePicker Width="150" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalAlignment="Center" SelectedDate="{Binding BirthDate}"></DatePicker>
         <Button Width="200" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" Content="Compute" Command="{Binding EnterCommand}"></Button>
+        
+        <Label Target="{Binding ElementName=Ageblock}" Grid.Row="0" Grid.Column="1">Your age is:</Label>
         <TextBlock Name="Ageblock" Grid.Row="0" Grid.Column="1" Width="100" Height="30" Text="{Binding Age, Mode=OneWay}"></TextBlock>
+        
+        <Label Target="{Binding ElementName=WesternZodiacBlock}" Grid.Row="1" Grid.Column="1">Your western zodiac is:</Label>
         <TextBlock Name="WesternZodiacBlock" Grid.Row="1" Grid.Column="1" Width="100" Height="30" Text="{Binding UserWesternZodiac, Mode=OneWay}"></TextBlock>
+
+        <Label Target="{Binding ElementName=ChineseZodiacBlock}" Grid.Row="2" Grid.Column="1">Your chinese zodiac is:</Label>
+        <TextBlock Name="ChineseZodiacBlock" Grid.Row="2" Grid.Column="1" Width="100" Height="30" Text="{Binding UserChineseZodiac, Mode=OneWay}"></TextBlock>
+        
+        <Button Name="ExitButton" Width="200" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Content="Exit" Command="{Binding CloseCommand}"></Button>
     </Grid>
 </UserControl>

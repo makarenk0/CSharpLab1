@@ -16,6 +16,7 @@ namespace CSharpLab1.ViewModel
         #region Fields
         private User _user = new User();
         private RelayCommand<object> _enterCommand;
+        private RelayCommand<object> _closeCommand;
 
 
         #endregion
@@ -50,6 +51,14 @@ namespace CSharpLab1.ViewModel
             }
         }
 
+        public string UserChineseZodiac
+        {
+            get
+            {
+                return _user.UserChineseZodiac;
+            }
+        }
+
         public RelayCommand<object> EnterCommand
         {
             get
@@ -58,7 +67,17 @@ namespace CSharpLab1.ViewModel
                     o => CanExecuteCommand()));
             }
         }
+
+        public RelayCommand<Object> CloseCommand
+        {
+            get
+            {
+                return _closeCommand ?? (_closeCommand = new RelayCommand<object>(o => Environment.Exit(0)));
+            }
+        }
         #endregion
+
+
         public bool CanExecuteCommand()
         {
             return (BirthDate)!=null;
@@ -74,6 +93,7 @@ namespace CSharpLab1.ViewModel
 
                OnPropertyChanged("Age");
                OnPropertyChanged("UserWesternZodiac");
+               OnPropertyChanged("UserChineseZodiac");
             }
             else
             {
