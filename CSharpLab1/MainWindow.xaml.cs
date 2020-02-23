@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSharpLab1.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace CSharpLab1
     {
         public MainWindow()
         {
+            DataContext = new BirthDateViewModel();
             InitializeComponent();
         }
     }

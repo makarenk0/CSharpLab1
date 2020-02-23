@@ -19,7 +19,9 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Enter your birth date: "/>
-        <DatePicker Width="150" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalAlignment="Center"></DatePicker>
-        <Button Width="200" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" Content="Compute"></Button>
+        <DatePicker Width="150" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="1" VerticalContentAlignment="Center" HorizontalAlignment="Center" SelectedDate="{Binding BirthDate}"></DatePicker>
+        <Button Width="200" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="1" Content="Compute" Command="{Binding EnterCommand}"></Button>
+        <TextBlock Grid.Row="0" Grid.Column="1" Width="100" Height="30" Text="{Binding Age, Mode=OneWay}"></TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" Width="100" Height="30" Text="{Binding WesternZodiac, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"></TextBlock>
     </Grid>
 </UserControl>

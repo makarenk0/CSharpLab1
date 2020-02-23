@@ -2,9 +2,9 @@
 using System.Windows.Input;
 
 
-namespace CSharpLab1.Tools
+namespace CSharpLab1.Tools.MVVM
 {
-    class RelayCommand<T> : ICommand
+    public class RelayCommand<T> : ICommand
     {
         #region Fields
         readonly Action<T> _execute;
