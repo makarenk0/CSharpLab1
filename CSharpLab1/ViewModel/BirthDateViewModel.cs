@@ -42,7 +42,7 @@ namespace CSharpLab1.ViewModel
             }
         }
 
-        public String UserWesternZodiac
+        public string UserWesternZodiac
         {
             get
             {
